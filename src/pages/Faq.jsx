@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 
 export default function FAQSection() {
-  const [openIndex, setOpenIndex] = useState(0);
+  const [openIndex, setOpenIndex] = useState(null);
 
   const faqs = [
     {
@@ -21,7 +21,6 @@ export default function FAQSection() {
       question: "Who are your ideal clients?",
       answer: "Our ideal clients include homeowners navigating complex property insurance claims, real estate investors with single properties or portfolios, homeowner associations (HOAs) and property managers, and small commercial property owners. We work with clients seeking clarity, structure, and confidence in understanding their insurance claim documentation and processes."
     }
-    
   ];
 
   const toggleAccordion = (index) => {
@@ -29,17 +28,16 @@ export default function FAQSection() {
   };
 
   return (
-    <section className=" bg-gradient-to-br from-gray-50 via-white to-blue-50 px-6 py-4">
+    <section className="bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 px-6 py-4 transition-colors">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div 
-          className="bg-gradient-to-r from-[#000080] to-[#36454F] rounded-2xl py-2 mb-12 shadow-xl"
+          className="bg-gradient-to-r from-[#000080] to-[#36454F] dark:from-blue-700 dark:to-gray-700 rounded-2xl py-2 mb-12 shadow-xl dark:shadow-blue-900/30 transition-colors"
           style={{ animation: 'fadeIn 0.6s ease-out' }}
         >
           <h1 className="text-2xl md:text-3xl lg:text-3xl font-semibold text-white text-center">
             Frequently Asked Questions
           </h1>
-    
         </div>
 
         {/* FAQ Accordion */}
@@ -47,7 +45,7 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100"
+              className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl dark:shadow-blue-900/20 dark:hover:shadow-blue-600/30 transition-all duration-300 overflow-hidden border border-gray-100 dark:border-gray-700"
               style={{
                 animation: `slideUp 0.5s ease-out ${index * 0.1}s both`
               }}
@@ -55,18 +53,18 @@ export default function FAQSection() {
               {/* Question */}
               <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors duration-200 group"
+                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-200 group"
               >
-                <span className="text-lg font-semibold text-gray-800 group-hover:text-[#000080] transition-colors duration-200 pr-4">
+                <span className="text-lg font-semibold text-gray-800 dark:text-white group-hover:text-[#000080] dark:group-hover:text-blue-400 transition-colors duration-200 pr-4">
                   {faq.question}
                 </span>
-                <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center transform transition-all duration-300 group-hover:bg-blue-100 ${
-                  openIndex === index ? 'rotate-180 bg-[#000080]' : ''
+                <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center transform transition-all duration-300 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/30 ${
+                  openIndex === index ? 'rotate-180 bg-[#000080] dark:bg-blue-600' : ''
                 }`}>
                   {openIndex === index ? (
                     <Minus className="w-5 h-5 text-white" />
                   ) : (
-                    <Plus className="w-5 h-5 text-gray-600 group-hover:text-[#000080]" />
+                    <Plus className="w-5 h-5 text-gray-600 dark:text-gray-300 group-hover:text-[#000080] dark:group-hover:text-blue-400" />
                   )}
                 </div>
               </button>
@@ -78,8 +76,8 @@ export default function FAQSection() {
                 }`}
               >
                 <div className="px-6 pb-6 pt-2">
-                  <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent mb-4"></div>
-                  <p className="text-gray-600 leading-relaxed">
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-600 to-transparent mb-4"></div>
+                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed transition-colors">
                     {faq.answer}
                   </p>
                 </div>
