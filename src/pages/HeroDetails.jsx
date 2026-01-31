@@ -24,23 +24,23 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section className="py-12 px-4 bg-white">
+    <section className="py-12 px-4 bg-white dark:bg-gray-900 transition-colors">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature) => (
             <div key={feature.id} className="flex items-start gap-6">
               
               {/* Icon Circle */}
-              <div className="flex-shrink-0 w-20 h-20 bg-[#000080] rounded-full flex items-center justify-center text-white shadow-lg">
+              <div className="flex-shrink-0 w-20 h-20 bg-[#000080] dark:bg-blue-600 rounded-full flex items-center justify-center text-white shadow-lg dark:shadow-blue-600/30 transition-colors">
                 {feature.icon}
               </div>
 
               {/* Text Content */}
               <div className="flex-1 pt-2">
-                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2 transition-colors">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed transition-colors">
                   {feature.description}
                 </p>
               </div>

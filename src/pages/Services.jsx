@@ -7,53 +7,53 @@ export default function FeaturesSection() {
       icon: <BarChart3 className="w-8 h-8" />,
       title: "Crafted for Startups",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
-      color: "bg-blue-500"
+      color: "bg-blue-500 dark:bg-blue-600"
     },
     {
       icon: <Layers className="w-8 h-8" />,
       title: "High-quality Design",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
-      color: "bg-indigo-500"
+      color: "bg-indigo-500 dark:bg-indigo-600"
     },
     {
       icon: <CreditCard className="w-8 h-8" />,
       title: "All Essential Sections",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
-      color: "bg-blue-600"
+      color: "bg-blue-600 dark:bg-blue-700"
     },
     {
       icon: <Gauge className="w-8 h-8" />,
       title: "Speed Optimized",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
-      color: "bg-indigo-600"
+      color: "bg-indigo-600 dark:bg-indigo-700"
     },
     {
       icon: <Layers className="w-8 h-8" />,
       title: "Fully Customizable",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
-      color: "bg-blue-500"
+      color: "bg-blue-500 dark:bg-blue-600"
     },
     {
       icon: <RefreshCw className="w-8 h-8" />,
       title: "Regular Updates",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor.",
-      color: "bg-indigo-500"
+      color: "bg-indigo-500 dark:bg-indigo-600"
     }
   ];
 
   return (
-    <section className=" bg-gradient-to-br from-gray-50 via-white to-blue-50 py-12 px-6">
+    <section className="bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 py-12 px-6 transition-colors">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight transition-colors">
             We Offer The Best Quality Service
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400">
               for You
             </span>
           </h1>
-          <p className="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed transition-colors">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In convallis tortor eros.
             <br />
             Donec vitae tortor lacus. Phasellus aliquam ante in maximus.
@@ -65,13 +65,13 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+              className="group relative bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl dark:shadow-blue-900/20 dark:hover:shadow-blue-600/30 transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 dark:border-gray-700"
               style={{
                 animation: `slideUp 0.6s ease-out ${index * 0.1}s both`
               }}
             >
               {/* Gradient Background on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               {/* Content */}
               <div className="relative z-10">
@@ -81,28 +81,28 @@ export default function FeaturesSection() {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                   {feature.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed transition-colors">
                   {feature.description}
                 </p>
 
                 {/* Decorative Element */}
-                <div className="mt-6 w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="mt-6 w-12 h-1 bg-gradient-to-r from-blue-500 to-indigo-500 dark:from-blue-400 dark:to-indigo-400 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
               </div>
 
               {/* Corner Accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-100 to-transparent rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-100 to-transparent dark:from-blue-800/30 dark:to-transparent rounded-2xl opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
             </div>
           ))}
         </div>
 
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <button className="bg-[#000080] text-white px-8 py-4  font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 hover:bg-[#0000FF]">
+          <button className="bg-[#000080] dark:bg-blue-600 text-white px-8 py-4 font-semibold text-lg shadow-lg hover:shadow-xl dark:shadow-blue-600/30 transform hover:scale-105 transition-all duration-300 hover:bg-[#0000FF] dark:hover:bg-blue-700">
             Get Started Today
           </button>
         </div>
